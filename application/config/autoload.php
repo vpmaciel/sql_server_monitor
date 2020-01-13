@@ -165,13 +165,10 @@ $autoload['model'] = array(
     'CandidatoVagaModel',
     'EmpresaModel',
     'PublicaVagaModel',
-    'LoginPessoaModel',
-    'LoginEmpresaModel',
     'UsuarioModel',
     'PessoaModel',
     'CursoModel',
     'ObjetivoProfissionalModel',
-    'CertificadoModel',
     'ExperienciaProfissionalModel',
     'IdiomaModel',
     'HabilidadeModel'

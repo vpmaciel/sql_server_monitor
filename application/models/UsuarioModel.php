@@ -25,33 +25,33 @@ class UsuarioModel extends CI_Model
         }
     }
 
-    public function ObterRegistro($id = null, $email = null)
+    public function ObterRegistro()
     {
-        $cadastros = array();
+        $comando = 'select top 1000 name as "Banco de Dados",* from msdb.dbo.trace_dia_geral, msdb.dbo.banco_dados  where duration > 2
+    and trace_dia_geral.DatabaseID = banco_dados.dbid order by StartTime desc';
+        $cadastros = $this->db->query($comando);
         
-        if ($email) {
-            $this->db->where('email', $email);
-            $this->db->order_by('id', 'desc');
-            $cadastros = $this->db->get(Constante::USUARIO);
-        }
-        if ($id) {
-            $this->db->where('id', $id);
-            $this->db->order_by('id', 'asc');
-            $cadastros = $this->db->get(Constante::USUARIO);
-        }
         $lista = array();
         
         foreach ($cadastros->result() as $cadastro) {
             $dados = array();
-            $dados[Constante::ID] = $cadastro->id;
-            $dados[Constante::E_MAIL] = $cadastro->email;
-            $dados[Constante::SENHA] = $cadastro->senha;
-            $dados[Constante::DATA_CRIACAO] = $cadastro->data_criacao;
-            $dados[Constante::DATA_ULTIMO_ACESSO] = $cadastro->data_ultimo_acesso;
-            
+            $dados['blockedsid'] = $cadastro->blockedsid;
+            $dados['blockingsid'] = $cadastro->blockingsid;
+            $dados['eventinfo1'] = $cadastro->eventinfo1;
+            $dados['eventinfo2'] = $cadastro->eventinfo2;
+            $dados['waittime'] = $cadastro->waittime;
+            $dados['hostname'] = $cadastro->hostname;
+            $dados['dat_bloqueio'] = $cadastro->dat_bloqueio;
+            $dados['program_name1'] = $cadastro->program_name1;
+            $dados['program_name2'] = $cadastro->program_name2;
+            $dados['host_blocking'] = $cadastro->host_blocking;
             array_push($lista, $dados);
         }
         return $lista;
+        
+        return $query;
+        // $query = $this->db->query('SELECT * FROM usuario');
+        // return $query->num_rows();
     }
 
     public function ExcluirRegistro($pessoa = null)

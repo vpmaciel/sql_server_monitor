@@ -14,7 +14,7 @@
 }
 
 .row {
-	background-color: SteelBlue;
+	background-color: Moccasin;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	margin-left: 10px;
@@ -24,25 +24,31 @@
 .dropdown-toggle::after {
 	display: none;
 }
-
 .navbar a:focus, .navbar a:hover {
 	color: black !important;
-	text-decoration: underline;
-	background-color: white;
+	text-decoration: none;
 }
 /* 
 I will show you how to change a height of a standard Bootstrap navbar.
 */
-@media ( min-width : 768px) {
-	.navbar li a, .navbar-brand {
-		padding: 1px;
-	}
-	.navbar {
-		border-bottom: 1px black solid;
-		min-height: 35px;
-		height: 35px;
-		font-size: 16px;		
-	}
+@media
+(
+min-width
+:
+768px)
+{
+.navbar li a, .navbar-brand {
+	padding: 1px;
+}
+
+.navbar {
+	border: none;
+	min-height: 35px;
+	height: 35px;
+	font-size: 16px;
+	border: 1px black solid;
+}
+
 }
 /* change the background color */
 .bg-company {
@@ -55,6 +61,12 @@ I will show you how to change a height of a standard Bootstrap navbar.
 	border: 1px black solid;
 	font-size: 14px;
 }
+.dropdown-menu a:focus, .navbar a:hover {
+	color: black !important;
+	text-decoration: none;
+	background-color: white;
+}
+
 /* change the brand and text color */
 .bg-company .navbar-brand, .bg-company .navbar-text {
 	color: black;
@@ -64,26 +76,20 @@ I will show you how to change a height of a standard Bootstrap navbar.
 	color: black;
 }
 
-span {
-	color: #fff;
-}
-
 body {
 	font-size: 16px;
 	font-style: normal;
-	color: #fff;
 	width: 100%;
 	height: 100%;
-	margin: 0 auto;
+	margin: auto;
 	position: absolute;
-	background-color: SteelBlue;
+	background-color: Moccasin;
 	overflow: -moz-scrollbars-vertical;
 	overflow-y: scroll;
 	font-family: tauriregular;
-	padding-top: 35px;
-	color: #fff;
+	padding-top: 50px;
+	color: black;	
 }
-
 textarea:focus, input:focus, select:focus {
 	border-color: none !important;
 	outline: 0;
@@ -103,12 +109,6 @@ a, a:hover, a:visited {
 
 a:hover {
 	text-decoration: underline;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	text-align: center;
-	font-stretch: initial;
-	font-weight: bold;
 }
 
 h1 {
@@ -136,9 +136,9 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: initial;
-	line-height: inherit;
 	text-align: center;
+	font-stretch: initial;
+	font-weight: initial;
 }
 
 .entrada {
@@ -172,7 +172,7 @@ textarea {
 
 table tr td {
 	text-align: left;
-	color: #fff;
+	color: black;
 	border: none;
 }
 
@@ -198,7 +198,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 
 label {
-	color: #fff;
+	color: black;
 	font-size: 16px;
 	font-style: initial;
 	font-stretch: initial;
@@ -263,12 +263,9 @@ textarea {
 	border-radius: 0px;
 }
 
-span {
-	font-weight: normal;
-}
-
 .mensagem {
 	border-radius: 0px;
+	border: 1px white solid;
 	width: 600px;
 	text-align: center;
 }
