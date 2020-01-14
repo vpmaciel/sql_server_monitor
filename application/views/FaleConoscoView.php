@@ -5,12 +5,12 @@ defined('BASEPATH') || exit('No direct script access allowed');
 <html>
 <head>
     <?php
-    $this->load->view(Constante::CABECALHO_VIEW);
+    $this->load->view('CabecalhoView');
     ?> 
 </head>
 <body>
 	<div class="row">
-        <?php $this->load->view(Constante::MENU_VIEW); ?>
+        <?php $this->load->view('MenuViews'); ?>
     
 		<div class="col-lg-12">
 			<h1>Fale Conosco</h1>

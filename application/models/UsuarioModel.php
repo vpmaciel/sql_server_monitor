@@ -13,7 +13,7 @@ class UsuarioModel extends CI_Model
                 "dataHoraCriacao" => $data
             );
             $dados = $dados + $dataHoraCriacao;
-            return ($this->db->insert(Constante::USUARIO, $dados)) ? true : false;
+            return ($this->db->insert(usuario, $dados)) ? true : false;
         }
     }
 
@@ -21,7 +21,7 @@ class UsuarioModel extends CI_Model
     {
         if ($dados && $pessoa) {
             $this->db->where('id', $pessoa);
-            return ($this->db->update(Constante::USUARIO, $dados)) ? true : false;
+            return ($this->db->update(usuario, $dados)) ? true : false;
         }
     }
 
@@ -48,16 +48,12 @@ class UsuarioModel extends CI_Model
             array_push($lista, $dados);
         }
         return $lista;
-        
-        return $query;
-        // $query = $this->db->query('SELECT * FROM usuario');
-        // return $query->num_rows();
     }
 
     public function ExcluirRegistro($pessoa = null)
     {
         if ($pessoa) {
-            return $this->db->where('id', $pessoa)->delete(Constante::USUARIO);
+            return $this->db->where('id', $pessoa)->delete(usuario);
         }
     }
 }

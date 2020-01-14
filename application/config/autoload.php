@@ -61,26 +61,7 @@ $autoload['packages'] = array();
 $autoload['libraries'] = array(
     'database',
     'session',
-    'pagination',
-    'Anuncio',
-    'Sexo',
-    'Deficiencia',
-    'Escolaridade',
-    'Contrato',
-    'PretensaoSalarial',
-    'NivelHierarquico',
-    'AreaInteresse',
-    'Estado',
-    'EstadoCivil',
-    'Nacionalidade',
-    'Pais',
-    'Resposta',
-    'Cnh',
-    'Situacao',
-    'Modalidade',
-    'NivelConhecimento',
-    'table',
-    'Constante'
+    'table'
 );
 
 /*
@@ -162,14 +143,5 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array(
-    'CandidatoVagaModel',
-    'EmpresaModel',
-    'PublicaVagaModel',
-    'UsuarioModel',
-    'PessoaModel',
-    'CursoModel',
-    'ObjetivoProfissionalModel',
-    'ExperienciaProfissionalModel',
-    'IdiomaModel',
-    'HabilidadeModel'
+    'UsuarioModel'
 );
